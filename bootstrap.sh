@@ -5,20 +5,21 @@ echo "Actualizando paquetes e instalando BIND9..."
 sudo apt-get update -y
 sudo apt-get install -y bind9 bind9utils bind9-doc
 
-echo "Copiando ficheros de configuración..."
+echo "Copiando los ficheros necesarios para la configuración..."
 sudo cp /vagrant/config/named /etc/default/named
 sudo cp /vagrant/config/named.conf.options /etc/bind/named.conf.options
 sudo cp /vagrant/config/named.conf.local /etc/bind/named.conf.local
 sudo cp /vagrant/config/nicolas.test.dns /var/lib/bind/nicolas.test.dns
 sudo cp /vagrant/config/nicolas.test.rev /var/lib/bind/nicolas.test.rev
+sudo mv /etc/resolv.conf /etc/resolv.conf.backup
+sudo cp /vagrant/config/resolv.conf /etc/resolv.conf
 
-
-echo "Verificando sintaxis de BIND..."
+echo "Verificando sintaxis de los archivos de configuración de BIND..."
 sudo named-checkconf
 sudo named-checkzone nicolas.test /var/lib/bind/nicolas.test.dns
-sudo named-checkzone 5.168.192.in-addr.arpa /var/lib/bind/nicolas.test.rev
+sudo named-checkzone 60.168.192.in-addr.arpa /var/lib/bind/nicolas.test.rev
 
-echo "Reiniciando BIND9..."
+echo "Reiniciando el servicio BIND9..."
 sudo systemctl restart bind9
 
 echo "Provisionamiento completado"

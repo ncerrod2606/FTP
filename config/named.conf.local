@@ -11,7 +11,7 @@ zone "nicolas.test" {
   file "/var/lib/bind/nicolas.test.dns";
 };
 
-zone "5.168.192.in-addr.arpa" {
+zone "60.168.192.in-addr.arpa" {
   type master;
   file "/var/lib/bind/nicolas.test.rev";
 };

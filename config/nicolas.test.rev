@@ -1,5 +1,5 @@
 ;
-; 5.168.192
+; Zona inversa: 60.168.192
 ;
 $TTL    604800
 @       IN      SOA     debian.nicolas.test. admin.nicolas.test. (
@@ -12,5 +12,5 @@ $TTL    604800
 
 @       IN      NS      debian.nicolas.test.
 
-5      IN      PTR     debian.nicolas.test.
+101      IN      PTR     debian.nicolas.test.
 

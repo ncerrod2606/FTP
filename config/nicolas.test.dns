@@ -13,5 +13,7 @@ $TTL    604800
 @       IN      NS      debian.nicolas.test.
 
 ; Registros A (asocian nombres con IP)
-debian.nicolas.test.  IN      A       192.168.5.11
+debian.nicolas.test.  IN      A       192.168.60.101
+ftp.nicolas.test.     IN      CNAME   debian.nicolas.test.
+
 
