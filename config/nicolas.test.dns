@@ -1,0 +1,17 @@
+;
+; Zona directa: nicolas.test
+;
+$TTL    604800
+@       IN      SOA     debian.nicolas.test. admin.nicolas.test. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+; Servidor de nombres
+@       IN      NS      debian.nicolas.test.
+
+; Registros A (asocian nombres con IP)
+debian.nicolas.test.  IN      A       192.168.5.11
+
